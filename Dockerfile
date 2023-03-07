@@ -8,7 +8,7 @@ RUN apt update \
 
 # httpd
 RUN cd /srv \
-    && wget https://github.com/tideeh/terracap-php5.2/raw/master/files/httpd-2.2.3.tar.gz \
+    && wget https://github.com/tideeh/terracap-php5.2/raw/main/files/httpd-2.2.3.tar.gz \
     && tar -xzf httpd-2.2.3.tar.gz \
     && rm httpd-2.2.3.tar.gz
 RUN cd /srv/httpd-2.2.3 \
@@ -18,7 +18,7 @@ RUN cd /srv/httpd-2.2.3 \
 
 # libxml
 RUN cd /srv \
-    && wget https://github.com/tideeh/terracap-php5.2/raw/master/files/libxml2-2.8.0.tar.xz \
+    && wget https://github.com/tideeh/terracap-php5.2/raw/main/files/libxml2-2.8.0.tar.xz \
     && tar -xf libxml2-2.8.0.tar.xz \
     && rm libxml2-2.8.0.tar.xz
 RUN cd /srv/libxml2-2.8.0 \
@@ -29,8 +29,8 @@ RUN cd /srv/libxml2-2.8.0 \
 
 # oracle
 RUN apt install unzip libaio-dev -y && mkdir /opt/oracle
-RUN wget https://github.com/tideeh/terracap-php5.2/raw/master/files/instantclient-basic-linux.x64-11.2.0.4.0.zip -O /tmp/instantclient-basic-linux.x64-11.2.0.4.0.zip && \
-    wget https://github.com/tideeh/terracap-php5.2/raw/master/files/instantclient-sdk-linux.x64-11.2.0.4.0.zip -O /tmp/instantclient-sdk-linux.x64-11.2.0.4.0.zip && \
+RUN wget https://github.com/tideeh/terracap-php5.2/raw/main/files/instantclient-basic-linux.x64-11.2.0.4.0.zip -O /tmp/instantclient-basic-linux.x64-11.2.0.4.0.zip && \
+    wget https://github.com/tideeh/terracap-php5.2/raw/main/files/instantclient-sdk-linux.x64-11.2.0.4.0.zip -O /tmp/instantclient-sdk-linux.x64-11.2.0.4.0.zip && \
     unzip /tmp/instantclient-basic-linux.x64-11.2.0.4.0.zip -d /opt/oracle/ && \
     unzip /tmp/instantclient-sdk-linux.x64-11.2.0.4.0.zip -d /opt/oracle/ && \
     rm /tmp/instantclient-basic-linux.x64-11.2.0.4.0.zip && \
@@ -51,7 +51,7 @@ RUN ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib/ \
 && ln -s /opt/oracle/instantclient_11_2 /opt/oracle/client/lib
 
 RUN cd /srv  \
-    && wget https://github.com/tideeh/terracap-php5.2/raw/master/files/php-5.2.17.tar.gz \
+    && wget https://github.com/tideeh/terracap-php5.2/raw/main/files/php-5.2.17.tar.gz \
     && tar -xzf php-5.2.17.tar.gz \
     && rm php-5.2.17.tar.gz
 
@@ -99,6 +99,6 @@ RUN pecl install xdebug-2.2.7
 RUN pecl install zendopcache-7.0.5
 
 # php SOAP includes
-RUN wget https://github.com/tideeh/terracap-php5.2/raw/master/files/soap-includes.tar.gz -O /tmp/soap-includes.tar.gz && \
+RUN wget https://github.com/tideeh/terracap-php5.2/raw/main/files/soap-includes.tar.gz -O /tmp/soap-includes.tar.gz && \
     tar -xvf /tmp/soap-includes.tar.gz --directory /usr/local/lib/php/ && \
     rm /tmp/soap-includes.tar.gz
